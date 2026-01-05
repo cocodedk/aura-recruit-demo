@@ -14,6 +14,7 @@ A modern, mobile-first Vue 3 demo site showcasing frontend development skills wi
 - **Pre-commit Quality Checks** - Automated testing and linting
 - **Mobile-First Design** - Responsive across all devices
 - **Simulated Backend** - Form submissions and file uploads without server
+- **GitHub Pages Deployed** - Live demo available at [cocodedk.github.io/aura-recruit-demo](https://cocodedk.github.io/aura-recruit-demo)
 
 ## 🚀 Development Workflow
 
