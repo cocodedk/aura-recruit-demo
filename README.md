@@ -1,5 +1,8 @@
 # 🎯 Aura Recruit Demo Site
 
+[![Deploy to GitHub Pages](https://github.com/cocodedk/aura-recruit-demo/actions/workflows/deploy.yml/badge.svg)](https://github.com/cocodedk/aura-recruit-demo/actions/workflows/deploy.yml)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://cocodedk.github.io/aura-recruit-demo)
+
 > **Vue.js Frontend Developer Portfolio Project** by [Babak Bandpey](https://github.com/cocodedk)
 >
 > *Created for job interview demonstration purposes - showcasing modern Vue 3 development with comprehensive testing and production-ready code quality.*
@@ -128,3 +131,11 @@ This project maintains **high code quality** with:
 - ✅ Accessibility features and semantic HTML
 - ✅ Router navigation and page transitions
 - ✅ Form validation and error handling
+
+## 📄 License
+
+**All Rights Reserved** - Copyright © 2026 Babak Bandpey
+
+This is a proprietary portfolio demonstration project. You may view the source code for educational purposes, but you may **NOT** copy, modify, distribute, or use this code without explicit written permission.
+
+See [LICENSE](./LICENSE) for full details.

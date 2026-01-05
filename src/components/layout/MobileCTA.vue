@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
 import BaseButton from '@/components/ui/BaseButton.vue'
 </script>
 
@@ -17,7 +16,7 @@ import BaseButton from '@/components/ui/BaseButton.vue'
         Hire Talent
       </BaseButton>
 
-      <BaseButton variant="ghost" as="router-link" to="/cv-drop" full>
+      <BaseButton variant="ghost" as="router-link" to="/cv-drop" full class="opacity-60 hover:opacity-100">
         Submit CV
       </BaseButton>
     </div>

@@ -2,23 +2,26 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import Section from './Section.vue'
 
+// Create a proper mock class for IntersectionObserver
+const createMockIntersectionObserver = (observeFn: ReturnType<typeof vi.fn>, disconnectFn: ReturnType<typeof vi.fn>) => {
+  return class MockIntersectionObserver {
+    observe = observeFn
+    disconnect = disconnectFn
+    unobserve = vi.fn()
+    constructor(public callback: IntersectionObserverCallback) {}
+  }
+}
+
 describe('Section', () => {
-  let mockObserve: vi.MockedFunction<any>
-  let mockDisconnect: vi.MockedFunction<any>
+  let mockObserve: ReturnType<typeof vi.fn>
+  let mockDisconnect: ReturnType<typeof vi.fn>
+  let MockIO: ReturnType<typeof createMockIntersectionObserver>
 
   beforeEach(() => {
     mockObserve = vi.fn()
     mockDisconnect = vi.fn()
-
-    // Mock IntersectionObserver
-    const mockIntersectionObserver = vi.fn()
-    mockIntersectionObserver.mockReturnValue({
-      observe: mockObserve,
-      disconnect: mockDisconnect,
-      unobserve: vi.fn(),
-    })
-
-    global.IntersectionObserver = mockIntersectionObserver
+    MockIO = createMockIntersectionObserver(mockObserve, mockDisconnect)
+    global.IntersectionObserver = MockIO as any
   })
 
   it('renders with default styling', () => {
@@ -31,7 +34,7 @@ describe('Section', () => {
     expect(wrapper.text()).toBe('Section content')
     expect(wrapper.classes()).toContain('py-16')
     expect(wrapper.classes()).toContain('bg-aura-light')
-    expect(wrapper.find('.max-w-xl').exists()).toBe(true)
+    expect(wrapper.find('.max-w-7xl').exists()).toBe(true)
   })
 
   it('renders dark section variant', () => {
@@ -73,24 +76,24 @@ describe('Section', () => {
 
     await wrapper.vm.$nextTick()
 
-    expect(global.IntersectionObserver).toHaveBeenCalled()
+    // IntersectionObserver should have been instantiated
     expect(mockObserve).toHaveBeenCalled()
   })
 
   it('applies reveal animation classes when visible', async () => {
-    let observerCallback: (entries: any[]) => void
+    let observerCallback: IntersectionObserverCallback | null = null
 
-    const mockIntersectionObserver = vi.fn()
-    mockIntersectionObserver.mockImplementation((callback) => {
-      observerCallback = callback
-      return {
-        observe: mockObserve,
-        disconnect: mockDisconnect,
-        unobserve: vi.fn(),
+    // Create a capturing mock class
+    class CapturingMockIO {
+      observe = mockObserve
+      disconnect = mockDisconnect
+      unobserve = vi.fn()
+      constructor(callback: IntersectionObserverCallback) {
+        observerCallback = callback
       }
-    })
+    }
 
-    global.IntersectionObserver = mockIntersectionObserver
+    global.IntersectionObserver = CapturingMockIO as any
 
     const wrapper = mount(Section, {
       props: {
@@ -101,15 +104,20 @@ describe('Section', () => {
       }
     })
 
+    await wrapper.vm.$nextTick()
+
     // Initially not visible
     expect(wrapper.classes()).toContain('opacity-0')
     expect(wrapper.classes()).toContain('translate-y-8')
 
     // Simulate intersection
-    observerCallback!([{ isIntersecting: true }])
+    if (observerCallback) {
+      observerCallback([{ isIntersecting: true } as IntersectionObserverEntry])
+    }
 
     await wrapper.vm.$nextTick()
 
+    // After intersection, should be visible
     expect(wrapper.classes()).toContain('opacity-100')
     expect(wrapper.classes()).toContain('translate-y-0')
   })
@@ -124,6 +132,7 @@ describe('Section', () => {
       }
     })
 
-    expect(global.IntersectionObserver).not.toHaveBeenCalled()
+    // IntersectionObserver should not have been instantiated
+    expect(mockObserve).not.toHaveBeenCalled()
   })
 })

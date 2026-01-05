@@ -29,15 +29,17 @@ const handleSubmit = async () => {
     <div v-if="!isSubmitted" class="pb-20 md:pb-0">
       <!-- HERO -->
       <Section dark>
-        <PageTitle>Contact Aura Recruit</PageTitle>
-        <p class="text-white/80 mt-4">
-          Get in touch to discuss your hiring needs or career opportunities.
-        </p>
+        <div class="md:text-center">
+          <PageTitle>Contact Aura Recruit</PageTitle>
+          <p class="text-white/80 mt-4">
+            Get in touch to discuss your hiring needs or career opportunities.
+          </p>
+        </div>
       </Section>
 
       <!-- FORM -->
       <Section>
-        <div class="max-w-md mx-auto space-y-6">
+        <div class="max-w-md md:max-w-lg lg:max-w-xl mx-auto space-y-6">
           <InputField
             label="Your Name"
             placeholder="Enter your full name"

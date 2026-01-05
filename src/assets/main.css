@@ -2,13 +2,22 @@
 
 /* Custom theme configuration for Aura Recruit */
 @theme {
-  /* Colors */
-  --color-aura-navy: #0B1C2D;
-  --color-aura-blue: #1F3A5F;
-  --color-aura-accent: #3DA9FC;
-  --color-aura-slate: #6B7280;
-  --color-aura-light: #F8FAFC;
-  --color-aura-white: #FFFFFF;
+  /* Colors - Dark mode first with light accents */
+  --color-aura-navy: #0B1C2D;        /* Primary dark background */
+  --color-aura-charcoal: #1A2838;    /* Subtle dark variant */
+  --color-aura-blue: #1F3A5F;        /* Secondary background */
+  --color-aura-accent: #3DA9FC;      /* Single primary CTA color */
+  --color-aura-slate: #6B7280;       /* Secondary text */
+  --color-aura-dark-slate: #475569;  /* Darker slate for contrast */
+  --color-aura-light: #F8FAFC;       /* Page background */
+  --color-aura-white: #FFFFFF;        /* Pure white */
+
+  /* Tech-inspired colors for About Demo page */
+  --color-tech-purple: #8B5CF6;      /* Vibrant purple */
+  --color-tech-cyan: #06B6D4;        /* Electric cyan */
+  --color-tech-pink: #EC4899;        /* Bright pink */
+  --gradient-tech: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+  --gradient-dark: linear-gradient(135deg, #1e1b4b 0%, #1e293b 100%);
 
   /* Border radius */
   --radius-xl: 0.75rem;
@@ -16,9 +25,15 @@
 
   /* Box shadows */
   --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-  /* Font family */
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Font family - Modern grotesk/humanist sans */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Typography scale - Mobile-first */
+  /* H1: text-3xl md:text-5xl lg:text-6xl (bold, authoritative) */
+  /* H2: text-2xl md:text-3xl lg:text-4xl (calm, structured) */
+  /* Body: text-base md:text-lg (readable, not tiny) */
 
   /* Font sizes */
   --text-2xl: 24px;
@@ -27,8 +42,12 @@
   --text-3xl--line-height: 1.2;
   --text-4xl: 36px;
   --text-4xl--line-height: 1.1;
+  --text-5xl: 48px;
+  --text-5xl--line-height: 1.1;
+  --text-6xl: 60px;
+  --text-6xl--line-height: 1.1;
 
-  /* Spacing */
+  /* Spacing - 8-point system */
   --spacing-18: 4.5rem;
   --spacing-88: 22rem;
 }
@@ -48,4 +67,19 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #1e293b; /* Default text color for light backgrounds */
+}
+
+/* Typography utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em; /* tracking-tight */
+}
+
+/* Ensure proper contrast on dark backgrounds */
+.bg-aura-navy,
+.bg-aura-blue,
+.bg-aura-charcoal {
+  color: #ffffff;
 }

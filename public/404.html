@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - Aura Recruit</title>
+  <script>
+    // Redirect to the main app and let Vue Router handle the route
+    const path = window.location.pathname.replace('/aura-recruit-demo', '');
+    const redirect = '/aura-recruit-demo/' + (path === '/' ? '' : '?redirect=' + encodeURIComponent(path));
+    window.location.replace(redirect);
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>

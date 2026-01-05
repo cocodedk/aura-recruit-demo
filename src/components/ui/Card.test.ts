@@ -43,8 +43,8 @@ describe('Card', () => {
       }
     })
 
-    expect(wrapper.classes()).toContain('hover:shadow-soft')
-    expect(wrapper.classes()).toContain('hover:scale-[1.02]')
+    expect(wrapper.classes()).toContain('hover:shadow-medium')
+    expect(wrapper.classes()).toContain('hover:scale-[1.01]')
     expect(wrapper.classes()).toContain('transition-all')
   })
 

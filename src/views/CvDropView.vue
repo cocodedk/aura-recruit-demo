@@ -33,15 +33,17 @@ const handleSubmit = async () => {
     <div v-if="!isSubmitted" class="pb-20 md:pb-0">
       <!-- HERO -->
       <Section dark>
-        <PageTitle>Submit Your CV</PageTitle>
-        <p class="text-white/80 mt-4">
-          Join our network of elite tech professionals.
-        </p>
+        <div class="md:text-center">
+          <PageTitle>Submit Your CV</PageTitle>
+          <p class="text-white/80 mt-4">
+            Join our network of elite tech professionals.
+          </p>
+        </div>
       </Section>
 
       <!-- FORM -->
       <Section>
-        <div class="max-w-md mx-auto space-y-6">
+        <div class="max-w-md md:max-w-lg lg:max-w-xl mx-auto space-y-6">
           <FileUpload @file-selected="handleFileSelected" />
 
           <InputField

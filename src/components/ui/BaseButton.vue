@@ -20,13 +20,13 @@ const classes = computed(() => {
   const variants: Record<Variant, string> = {
     primary: 'bg-aura-accent text-white hover:opacity-90 shadow-soft',
     secondary: 'bg-white text-aura-navy border border-slate-200 hover:shadow-soft',
-    ghost: 'border border-white/30 text-white hover:bg-white/10'
+    ghost: 'border border-white/20 text-white/90 hover:bg-white/5 hover:text-white'
   }
 
   const sizes: Record<Size, string> = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
+    sm: 'px-4 py-2.5 text-sm min-h-[40px]',
+    md: 'px-6 py-3 text-base min-h-[48px]',
+    lg: 'px-8 py-4 text-lg min-h-[56px]'
   }
 
   const disabledClasses = props.disabled ? 'opacity-50 cursor-not-allowed' : ''

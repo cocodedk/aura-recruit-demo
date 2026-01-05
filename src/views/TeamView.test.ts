@@ -29,8 +29,8 @@ describe('TeamView', () => {
     const wrapper = mount(TeamView)
 
     const images = wrapper.findAll('img')
-    expect(images[0].attributes('src')).toContain('Matt')
-    expect(images[1].attributes('src')).toContain('Julian')
+    expect(images[0].attributes('src')).toContain('matt')
+    expect(images[1].attributes('src')).toContain('julian')
   })
 
   it('includes LinkedIn links for team members', () => {
@@ -79,7 +79,9 @@ describe('TeamView', () => {
       expect(img.classes()).toContain('w-full')
       expect(img.classes()).toContain('aspect-square')
       expect(img.classes()).toContain('object-cover')
-      expect(img.classes()).toContain('rounded-2xl')
+      // rounded-2xl is on the parent div, not the img
+      const parent = img.element.parentElement
+      expect(parent?.classList.contains('rounded-2xl')).toBe(true)
     })
   })
 

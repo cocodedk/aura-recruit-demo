@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { RouterLink, useRoute } from 'vue-router'
+import { RouterLink } from 'vue-router'
 
 const isMenuOpen = ref(false)
 
@@ -16,7 +16,8 @@ const navItems = [
   { name: 'Home', path: '/' },
   { name: 'Hire Talent', path: '/contact' },
   { name: 'Submit CV', path: '/cv-drop' },
-  { name: 'Team', path: '/team' }
+  { name: 'Team', path: '/team' },
+  { name: 'About Demo', path: '/about-demo' }
 ]
 </script>
 
@@ -25,27 +26,37 @@ const navItems = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <RouterLink to="/" class="text-xl font-bold tracking-tight">
+        <RouterLink to="/" class="text-xl font-bold tracking-tight hover:text-aura-accent transition-colors active:scale-95">
           AURA RECRUIT
         </RouterLink>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-8">
+        <nav class="hidden md:flex items-center gap-8">
           <RouterLink
             v-for="item in navItems"
             :key="item.path"
             :to="item.path"
-            class="transition-colors hover:text-aura-accent"
+            class="text-sm font-medium transition-all duration-200 hover:text-aura-accent active:scale-95 whitespace-nowrap"
             :class="{ 'text-aura-accent': $route.path === item.path }"
           >
             {{ item.name }}
           </RouterLink>
         </nav>
 
+        <!-- Desktop Contact Info - De-emphasized -->
+        <div class="hidden md:flex items-center gap-4 text-xs text-white/60">
+          <a href="tel:+442080040066" class="hover:text-white/80 transition-colors active:scale-95 whitespace-nowrap">
+            +44 208 004 0066
+          </a>
+          <a href="mailto:info@aurarecruit.com" class="hover:text-white/80 transition-colors active:scale-95 whitespace-nowrap">
+            info@aurarecruit.com
+          </a>
+        </div>
+
         <!-- Mobile Menu Button -->
         <button
           @click="toggleMenu"
-          class="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+          class="md:hidden p-2 rounded-lg hover:bg-white/10 active:scale-95 transition-all duration-200"
           aria-label="Toggle menu"
         >
           <svg
@@ -78,7 +89,7 @@ const navItems = [
           :key="item.path"
           :to="item.path"
           @click="closeMenu"
-          class="block text-lg py-2 transition-all duration-200 hover:text-aura-accent hover:translate-x-2"
+          class="block text-lg py-2 transition-all duration-200 hover:text-aura-accent hover:translate-x-2 active:scale-95"
           :class="{ 'text-aura-accent': $route.path === item.path }"
           :style="{ animationDelay: `${index * 50}ms` }"
         >

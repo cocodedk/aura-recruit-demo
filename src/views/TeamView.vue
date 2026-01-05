@@ -6,14 +6,14 @@ const teamMembers = [
   {
     name: 'Matt',
     role: 'Co-Founder',
-    image: 'https://via.placeholder.com/300x300/3DA9FC/FFFFFF?text=Matt',
-    linkedin: 'https://linkedin.com/in/matt-aura-recruit'
+    image: '/images/team/matt.jpg',
+    linkedin: 'https://www.linkedin.com/in/matt-crick-a0005b11b/'
   },
   {
     name: 'Julian',
     role: 'Co-Founder',
-    image: 'https://via.placeholder.com/300x300/1F3A5F/FFFFFF?text=Julian',
-    linkedin: 'https://linkedin.com/in/julian-aura-recruit'
+    image: '/images/team/julian.jpg',
+    linkedin: 'https://www.linkedin.com/in/julian-simon-parson-32803a11b'
   }
 ]
 </script>
@@ -22,10 +22,12 @@ const teamMembers = [
   <main class="bg-aura-light text-slate-800 min-h-screen pb-20 md:pb-0">
     <!-- HERO -->
     <Section dark>
-      <PageTitle>Meet the Team</PageTitle>
-      <p class="text-white/80 mt-4">
-        Trust and honest relationships are the foundations of our success.
-      </p>
+      <div class="md:text-center">
+        <PageTitle>Meet the Team</PageTitle>
+        <p class="text-white/80 mt-4">
+          Trust and honest relationships are the foundations of our success.
+        </p>
+      </div>
     </Section>
 
     <!-- TEAM MEMBERS -->

@@ -109,16 +109,17 @@ describe('App', () => {
     expect(wrapper.findComponent({ name: 'MobileCTA' }).exists()).toBe(true)
   })
 
-  it('includes global CSS styles', () => {
+  it('includes page transition component', () => {
     const wrapper = mount(App, {
       global: {
         plugins: [router]
       }
     })
 
-    // Check if style element exists (page transitions)
-    const styles = wrapper.findAll('style')
-    expect(styles.length).toBeGreaterThan(0)
+    // Check if transition component exists (page transitions)
+    const transition = wrapper.findComponent({ name: 'Transition' })
+    expect(transition.exists()).toBe(true)
+    expect(transition.attributes('name')).toBe('page')
   })
 
   it('sets up smooth scrolling behavior', () => {

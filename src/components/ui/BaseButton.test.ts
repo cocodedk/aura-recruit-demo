@@ -40,8 +40,9 @@ describe('BaseButton', () => {
       }
     })
 
-    expect(wrapper.classes()).toContain('border-white/30')
-    expect(wrapper.classes()).toContain('text-white')
+    const classString = wrapper.classes().join(' ')
+    expect(classString).toContain('border-white/20')
+    expect(classString).toContain('text-white/90')
   })
 
   it('applies full width when full prop is true', () => {
@@ -97,7 +98,7 @@ describe('BaseButton', () => {
     })
 
     expect(wrapper.classes()).toContain('px-4')
-    expect(wrapper.classes()).toContain('py-2')
+    expect(wrapper.classes()).toContain('py-2.5')
     expect(wrapper.classes()).toContain('text-sm')
   })
 

@@ -86,7 +86,7 @@ describe('HomeView', () => {
 
     expect(wrapper.text()).toContain('Aura understood exactly')
     expect(wrapper.text()).toContain('People Director')
-    expect(wrapper.text()).toContain('FinTech, Denmark')
+    expect(wrapper.text()).toContain('FinTech Company (Denmark)')
   })
 
   it('displays geography information', () => {
@@ -109,7 +109,8 @@ describe('HomeView', () => {
       }
     })
 
-    const buttons = wrapper.findAll('button')
+    // Buttons are router-links, not button elements
+    const buttons = wrapper.findAll('button, a')
     expect(buttons.some(btn => btn.text() === 'Hire Talent')).toBe(true)
     expect(buttons.some(btn => btn.text() === 'Submit CV')).toBe(true)
   })
@@ -166,7 +167,7 @@ describe('HomeView', () => {
       }
     })
 
-    expect(wrapper.find('.max-w-xl').exists()).toBe(true)
+    expect(wrapper.find('.max-w-7xl').exists()).toBe(true)
     expect(wrapper.find('.mx-auto').exists()).toBe(true)
     expect(wrapper.find('.px-6').exists()).toBe(true)
   })

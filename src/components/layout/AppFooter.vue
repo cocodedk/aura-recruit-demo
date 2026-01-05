@@ -67,9 +67,41 @@ const showAddress = ref(false)
         </div>
       </div>
 
-      <!-- Copyright -->
-      <div class="mt-12 pt-8 border-t border-white/10 text-center text-white/60">
-        <p>© 2026 AURA RECRUIT. Web Design by Webwax. Privacy Policy</p>
+      <!-- Attribution -->
+      <div class="mt-12 pt-8 border-t border-white/10">
+        <div class="bg-gradient-to-r from-aura-accent via-[#2B8FE8] to-[#1F6FC4] rounded-xl p-8 md:p-10 text-center">
+          <p class="text-white/90 text-sm md:text-base mb-3 font-medium">
+            This is a demo page made by
+          </p>
+          <h4 class="text-white text-xl md:text-2xl font-semibold mb-6 tracking-tight">
+            Babak Bandpey
+          </h4>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <a
+              href="https://cocode.dk"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors font-medium text-sm md:text-base group"
+            >
+              <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+              <span class="group-hover:underline">cocode.dk</span>
+            </a>
+            <span class="hidden sm:inline-block text-white/40">•</span>
+            <a
+              href="https://linkedin.com/in/babakbandpey"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors font-medium text-sm md:text-base group"
+            >
+              <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              <span class="group-hover:underline">LinkedIn</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </footer>

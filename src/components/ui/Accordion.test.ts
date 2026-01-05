@@ -45,7 +45,7 @@ describe('Accordion', () => {
       }
     })
 
-    expect(wrapper.find('summary').classes()).toContain('font-medium')
+    expect(wrapper.find('summary').classes()).toContain('font-semibold')
   })
 
   it('includes chevron icon in summary', () => {

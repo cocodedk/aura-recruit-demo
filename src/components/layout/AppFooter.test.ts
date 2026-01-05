@@ -51,7 +51,7 @@ describe('AppFooter', () => {
     const wrapper = mount(AppFooter)
 
     const linkedinIcon = wrapper.findAll('svg').find(svg =>
-      svg.text().includes('M20.447')
+      svg.html().includes('M20.447')
     )
     expect(linkedinIcon).toBeDefined()
   })
@@ -60,7 +60,7 @@ describe('AppFooter', () => {
     const wrapper = mount(AppFooter)
 
     const instagramIcon = wrapper.findAll('svg').find(svg =>
-      svg.text().includes('M12 2.163')
+      svg.html().includes('M12 2.163')
     )
     expect(instagramIcon).toBeDefined()
   })
@@ -95,7 +95,8 @@ describe('AppFooter', () => {
   it('footer sections have proper spacing', () => {
     const wrapper = mount(AppFooter)
 
-    expect(wrapper.classes()).toContain('space-y-6')
+    // Individual sections have space-y-6, not the root footer
+    expect(wrapper.find('.space-y-6').exists()).toBe(true)
     expect(wrapper.find('.space-y-3').exists()).toBe(true)
   })
 
