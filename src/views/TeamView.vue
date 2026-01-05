@@ -6,13 +6,13 @@ const teamMembers = [
   {
     name: 'Matt',
     role: 'Co-Founder',
-    image: '/images/team/matt.jpg',
+    image: `${import.meta.env.BASE_URL}images/team/matt.jpg`,
     linkedin: 'https://www.linkedin.com/in/matt-crick-a0005b11b/'
   },
   {
     name: 'Julian',
     role: 'Co-Founder',
-    image: '/images/team/julian.jpg',
+    image: `${import.meta.env.BASE_URL}images/team/julian.jpg`,
     linkedin: 'https://www.linkedin.com/in/julian-simon-parson-32803a11b'
   }
 ]
