@@ -32,7 +32,7 @@ onMounted(() => {
   <section
     ref="sectionRef"
     :class="[
-      'py-8 md:py-12 lg:py-16 transition-all duration-700',
+      'py-16 md:py-20 lg:py-24 transition-all duration-700',
       dark ? 'bg-aura-navy text-white' : 'bg-aura-light',
       reveal ? (isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8') : ''
     ]"
