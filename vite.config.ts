@@ -10,7 +10,8 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
-  base: '/',
+  // Netlify sets NETLIFY=true, GitHub Actions needs the subpath
+  base: process.env.NETLIFY ? '/' : (process.env.NODE_ENV === 'production' ? '/aura-recruit-demo/' : '/'),
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
