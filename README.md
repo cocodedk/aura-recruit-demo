@@ -1,4 +1,8 @@
-# Aura Recruit Demo Site
+# 🎯 Aura Recruit Demo Site
+
+> **Vue.js Frontend Developer Portfolio Project** by [Babak Bandpey](https://github.com/cocodedk)
+>
+> *Created for job interview demonstration purposes - showcasing modern Vue 3 development with comprehensive testing and production-ready code quality.*
 
 A modern, mobile-first Vue 3 demo site showcasing frontend development skills with comprehensive testing and quality assurance.
 
