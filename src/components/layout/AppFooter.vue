@@ -103,6 +103,11 @@ const showAddress = ref(false)
           </div>
         </div>
       </div>
+
+      <!-- Copyright -->
+      <div class="mt-8 pt-8 border-t border-white/10 text-center text-white/60 text-sm">
+        <p>© 2026 AURA RECRUIT | Designed by Webwax</p>
+      </div>
     </div>
   </footer>
 </template>
