@@ -47,8 +47,8 @@ const techStack = {
 }
 
 const metrics: Metric[] = [
-  { label: 'Test Suite', value: 146, suffix: 'tests', icon: '🧪', color: 'purple' },
-  { label: 'Pass Rate', value: 86, suffix: '%', icon: '✅', showProgress: true, color: 'green' },
+  { label: 'Test Suite', value: 178, suffix: 'tests', icon: '🧪', color: 'purple' },
+  { label: 'Pass Rate', value: 100, suffix: '%', icon: '✅', showProgress: true, color: 'green' },
   { label: 'Components', value: 18, suffix: 'files', icon: '🧩', color: 'cyan' },
   { label: 'Type Safety', value: 100, suffix: '%', icon: '🛡️', showProgress: true, color: 'pink' }
 ]
