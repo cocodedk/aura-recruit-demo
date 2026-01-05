@@ -103,7 +103,7 @@
 
       <!-- Copyright -->
       <div class="mt-8 pt-8 border-t border-white/10 text-center text-white/60 text-sm">
-        <p>© 2026 AURA RECRUIT | Designed by Webwax</p>
+        <p>© 2026 AURA RECRUIT</p>
       </div>
     </div>
   </footer>
