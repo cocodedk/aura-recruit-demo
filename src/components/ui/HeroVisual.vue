@@ -4,17 +4,6 @@
 
 import { ref, onMounted, onUnmounted } from 'vue'
 
-// Enhanced color palette with higher saturation
-const blobColors = [
-  { base: 'rgba(61, 169, 252, 0.35)', variant: 'rgba(59, 130, 246, 0.4)' },   // Blue
-  { base: 'rgba(0, 217, 255, 0.3)', variant: 'rgba(14, 165, 233, 0.35)' },    // Cyan
-  { base: 'rgba(139, 92, 246, 0.3)', variant: 'rgba(168, 85, 247, 0.35)' },   // Purple
-  { base: 'rgba(20, 184, 166, 0.3)', variant: 'rgba(5, 150, 105, 0.35)' },    // Teal
-  { base: 'rgba(236, 72, 153, 0.4)', variant: 'rgba(219, 39, 119, 0.45)' },  // Hot pink/magenta
-  { base: 'rgba(251, 146, 60, 0.35)', variant: 'rgba(249, 115, 22, 0.4)' },  // Bright orange
-  { base: 'rgba(132, 204, 22, 0.3)', variant: 'rgba(101, 163, 13, 0.35)' },  // Lime green
-]
-
 // Enhanced particle colors with higher opacity
 const particleColors = [
   'rgba(61, 169, 252, 0.7)',   // Blue

@@ -67,7 +67,7 @@ describe('App', () => {
   })
 
   it('navigates between routes correctly', async () => {
-    const wrapper = mount(App, {
+    mount(App, {
       global: {
         plugins: [router]
       }

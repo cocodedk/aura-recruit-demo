@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  name: 'BaseSection'
+}
+</script>
+
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 

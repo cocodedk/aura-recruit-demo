@@ -11,7 +11,6 @@ const emit = defineEmits<{
 }>()
 
 const isDragOver = ref(false)
-const isUploading = ref(false)
 const uploadProgress = ref(0)
 const selectedFile = ref<File | null>(null)
 const uploadStatus = ref<'idle' | 'uploading' | 'success' | 'error'>('idle')

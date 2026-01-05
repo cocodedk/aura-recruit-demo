@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-const props = defineProps<{
+defineProps<{
   label: string
   type?: string
   placeholder?: string

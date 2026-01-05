@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  name: 'BaseAccordion'
+}
+</script>
+
 <script setup lang="ts">
 defineProps<{
   title: string

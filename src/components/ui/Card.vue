@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  name: 'BaseCard'
+}
+</script>
+
 <script setup lang="ts">
 defineProps<{
   dark?: boolean
