@@ -1,5 +1,51 @@
-@import './base.css';
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Custom theme configuration for Aura Recruit */
+@theme {
+  /* Colors */
+  --color-aura-navy: #0B1C2D;
+  --color-aura-blue: #1F3A5F;
+  --color-aura-accent: #3DA9FC;
+  --color-aura-slate: #6B7280;
+  --color-aura-light: #F8FAFC;
+  --color-aura-white: #FFFFFF;
+
+  /* Border radius */
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+
+  /* Box shadows */
+  --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.06);
+
+  /* Font family */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Font sizes */
+  --text-2xl: 24px;
+  --text-2xl--line-height: 1.25;
+  --text-3xl: 30px;
+  --text-3xl--line-height: 1.2;
+  --text-4xl: 36px;
+  --text-4xl--line-height: 1.1;
+
+  /* Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+}
+
+/* Base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
