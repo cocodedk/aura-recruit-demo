@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Aura Recruit Demo Site - Pre-commit Quality Checks
+echo "🔍 Running pre-commit quality checks..."
+
+# Run comprehensive test suite
+./scripts/run-tests.sh
+
+# Exit with the same code as the test script
+exit $?
