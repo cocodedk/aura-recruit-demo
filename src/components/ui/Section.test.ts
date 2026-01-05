@@ -17,12 +17,13 @@ describe('Section', () => {
   let mockDisconnect: ReturnType<typeof vi.fn>
   let MockIO: ReturnType<typeof createMockIntersectionObserver>
 
-  beforeEach(() => {
-    mockObserve = vi.fn()
-    mockDisconnect = vi.fn()
-    MockIO = createMockIntersectionObserver(mockObserve, mockDisconnect)
-    globalThis.IntersectionObserver = MockIO as any
-  })
+    beforeEach(() => {
+      mockObserve = vi.fn()
+      mockDisconnect = vi.fn()
+      MockIO = createMockIntersectionObserver(mockObserve, mockDisconnect)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      globalThis.IntersectionObserver = MockIO as any
+    })
 
   it('renders with default styling', () => {
     const wrapper = mount(Section, {
@@ -81,7 +82,7 @@ describe('Section', () => {
   })
 
   it('applies reveal animation classes when visible', async () => {
-    let observerCallback: ((entries: IntersectionObserverEntry[]) => void) | null = null
+    let observerCallback: IntersectionObserverCallback | undefined
 
     // Create a capturing mock class
     class CapturingMockIO {
@@ -91,8 +92,13 @@ describe('Section', () => {
       constructor(callback: IntersectionObserverCallback) {
         observerCallback = callback
       }
+      takeRecords() { return [] }
+      root = null
+      rootMargin = ''
+      thresholds = []
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     globalThis.IntersectionObserver = CapturingMockIO as any
 
     const wrapper = mount(Section, {
@@ -111,7 +117,7 @@ describe('Section', () => {
     expect(wrapper.classes()).toContain('translate-y-8')
 
     // Simulate intersection
-    observerCallback?.([{ isIntersecting: true } as IntersectionObserverEntry])
+    observerCallback?.([{ isIntersecting: true } as IntersectionObserverEntry], {} as IntersectionObserver)
 
     await wrapper.vm.$nextTick()
 
@@ -121,7 +127,7 @@ describe('Section', () => {
   })
 
   it('does not set up intersection observer when reveal is false', () => {
-    const wrapper = mount(Section, {
+    mount(Section, {
       props: {
         reveal: false
       },

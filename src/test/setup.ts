@@ -18,10 +18,19 @@ beforeAll(() => {
   })
 
   // Mock IntersectionObserver
+
   globalThis.IntersectionObserver = class IntersectionObserver {
+    root: Element | null = null
+    rootMargin: string = ''
+    thresholds: ReadonlyArray<number> = []
+
     constructor() {}
     disconnect() {}
     observe() {}
     unobserve() {}
-  }
+    takeRecords(): IntersectionObserverEntry[] {
+      return []
+    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as any
 })
