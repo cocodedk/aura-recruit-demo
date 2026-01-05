@@ -113,10 +113,10 @@ const architecture = [
           Built with Passion,<br />Crafted with Precision
         </h1>
 
-        <p class="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+        <div class="text-center text-xl md:text-2xl text-white/80 mb-8 leading-relaxed px-20 md:px-40">
           A comprehensive Vue.js demo showcasing modern frontend development,
           rigorous testing practices, and dedication to code quality.
-        </p>
+        </div>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <a
