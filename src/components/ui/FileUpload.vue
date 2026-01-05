@@ -69,7 +69,7 @@ const handleFile = (file: File) => {
 
   // Simulate upload progress
   const interval = setInterval(() => {
-    uploadProgress.value += Math.random() * 15
+    uploadProgress.value += 20
     if (uploadProgress.value >= 100) {
       uploadProgress.value = 100
       clearInterval(interval)
