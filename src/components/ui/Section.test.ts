@@ -21,7 +21,7 @@ describe('Section', () => {
     mockObserve = vi.fn()
     mockDisconnect = vi.fn()
     MockIO = createMockIntersectionObserver(mockObserve, mockDisconnect)
-    global.IntersectionObserver = MockIO as any
+    globalThis.IntersectionObserver = MockIO as any
   })
 
   it('renders with default styling', () => {
@@ -81,7 +81,7 @@ describe('Section', () => {
   })
 
   it('applies reveal animation classes when visible', async () => {
-    let observerCallback: IntersectionObserverCallback | null = null
+    let observerCallback: ((entries: IntersectionObserverEntry[]) => void) | null = null
 
     // Create a capturing mock class
     class CapturingMockIO {
@@ -93,7 +93,7 @@ describe('Section', () => {
       }
     }
 
-    global.IntersectionObserver = CapturingMockIO as any
+    globalThis.IntersectionObserver = CapturingMockIO as any
 
     const wrapper = mount(Section, {
       props: {
@@ -111,9 +111,7 @@ describe('Section', () => {
     expect(wrapper.classes()).toContain('translate-y-8')
 
     // Simulate intersection
-    if (observerCallback) {
-      observerCallback([{ isIntersecting: true } as IntersectionObserverEntry])
-    }
+    observerCallback?.([{ isIntersecting: true } as IntersectionObserverEntry])
 
     await wrapper.vm.$nextTick()
 

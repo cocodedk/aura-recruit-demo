@@ -29,8 +29,12 @@ describe('TeamView', () => {
     const wrapper = mount(TeamView)
 
     const images = wrapper.findAll('img')
-    expect(images[0].attributes('src')).toContain('matt')
-    expect(images[1].attributes('src')).toContain('julian')
+    const firstImage = images.at(0)
+    const secondImage = images.at(1)
+    expect(firstImage).toBeTruthy()
+    expect(secondImage).toBeTruthy()
+    expect(firstImage!.attributes('src')).toContain('matt')
+    expect(secondImage!.attributes('src')).toContain('julian')
   })
 
   it('includes LinkedIn links for team members', () => {

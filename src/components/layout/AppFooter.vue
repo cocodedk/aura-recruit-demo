@@ -101,9 +101,6 @@ const showAddress = ref(false)
               <span class="group-hover:underline">LinkedIn</span>
             </a>
           </div>
-          <p class="mt-6 text-white/70 text-xs md:text-sm">
-            © 2026 AURA RECRUIT · Webwax
-          </p>
         </div>
       </div>
     </div>

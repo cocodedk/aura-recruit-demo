@@ -61,6 +61,8 @@ onMounted(() => {
     }
   }, stepDuration)
 })
+
+defineExpose({ displayValue })
 </script>
 
 <template>

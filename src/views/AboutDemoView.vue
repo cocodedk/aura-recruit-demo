@@ -2,6 +2,15 @@
 import TechCard from '@/components/ui/TechCard.vue'
 import MetricDisplay from '@/components/ui/MetricDisplay.vue'
 
+type Metric = {
+  label: string
+  value: number
+  suffix: string
+  icon: string
+  showProgress?: boolean
+  color: 'purple' | 'cyan' | 'pink' | 'green'
+}
+
 const techStack = {
   frontend: [
     { title: 'Vue 3', version: 'v3.5.26', description: 'Progressive JavaScript framework with Composition API for reactive, component-based development' },
@@ -37,7 +46,7 @@ const techStack = {
   ]
 }
 
-const metrics = [
+const metrics: Metric[] = [
   { label: 'Test Suite', value: 146, suffix: 'tests', icon: '🧪', color: 'purple' },
   { label: 'Pass Rate', value: 86, suffix: '%', icon: '✅', showProgress: true, color: 'green' },
   { label: 'Components', value: 18, suffix: 'files', icon: '🧩', color: 'cyan' },

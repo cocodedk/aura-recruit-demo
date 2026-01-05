@@ -25,8 +25,8 @@ describe('MobileCTA', () => {
 
     const routerLinks = wrapper.findAllComponents({ name: 'RouterLink' })
     expect(routerLinks).toHaveLength(2)
-    expect(routerLinks[0].text()).toBe('Hire Talent')
-    expect(routerLinks[1].text()).toBe('Submit CV')
+    expect(routerLinks.at(0)?.text()).toBe('Hire Talent')
+    expect(routerLinks.at(1)?.text()).toBe('Submit CV')
   })
 
   it('is hidden on desktop (md and up)', () => {
@@ -83,8 +83,9 @@ describe('MobileCTA', () => {
       }
     })
 
-    const hireButton = wrapper.findAllComponents({ name: 'RouterLink' })[0]
-    expect(hireButton.props('to')).toBe('/contact')
+    const hireButton = wrapper.findAllComponents({ name: 'RouterLink' }).at(0)
+    expect(hireButton).toBeTruthy()
+    expect(hireButton!.props('to')).toBe('/contact')
   })
 
   it('navigates to cv-drop page when Submit CV is clicked', () => {
@@ -94,8 +95,9 @@ describe('MobileCTA', () => {
       }
     })
 
-    const submitButton = wrapper.findAllComponents({ name: 'RouterLink' })[1]
-    expect(submitButton.props('to')).toBe('/cv-drop')
+    const submitButton = wrapper.findAllComponents({ name: 'RouterLink' }).at(1)
+    expect(submitButton).toBeTruthy()
+    expect(submitButton!.props('to')).toBe('/cv-drop')
   })
 
   it('includes safe area padding for iOS', () => {
