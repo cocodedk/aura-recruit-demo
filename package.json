@@ -19,7 +19,7 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@vueuse/core": "^14.1.0",
