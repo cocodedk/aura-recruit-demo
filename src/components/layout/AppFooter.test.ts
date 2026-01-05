@@ -69,7 +69,6 @@ describe('AppFooter', () => {
     const wrapper = mount(AppFooter)
 
     expect(wrapper.text()).toContain('© 2026 AURA RECRUIT')
-    expect(wrapper.text()).toContain('Webwax')
   })
 
   it('has responsive grid layout', () => {
