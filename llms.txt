@@ -1,0 +1,21 @@
+# aura-recruit-demo
+
+> Demo recruitment platform built with Vue 3, TypeScript, and Vite. Showcases modern candidate management and job board UI.
+
+## Project
+
+- [GitHub Repository](https://github.com/cocodedk/aura-recruit-demo)
+- [Website](https://cocodedk.github.io/aura-recruit-demo/)
+- [Author](https://cocode.dk)
+
+## Source
+
+- [Components](https://github.com/cocodedk/aura-recruit-demo/tree/main/src/components)
+- [Views](https://github.com/cocodedk/aura-recruit-demo/tree/main/src/views)
+- [README](https://github.com/cocodedk/aura-recruit-demo/blob/main/README.md)
+- [CLAUDE.md](https://github.com/cocodedk/aura-recruit-demo/blob/main/CLAUDE.md)
+
+## Stack
+
+- Vue 3 (Composition API), TypeScript, Vite, Tailwind CSS
+- Vitest (unit tests), GitHub Pages deployment
