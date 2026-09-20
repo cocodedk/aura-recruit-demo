@@ -132,7 +132,7 @@ const architecture = [
           </a>
 
           <a
-            href="https://cocodedk.github.io/aura-recruit-demo/"
+            href="https://aura.cocode.dk/"
             target="_blank"
             rel="noopener noreferrer"
             class="px-8 py-4 rounded-xl border-2 border-white/20 backdrop-blur-sm hover:border-white/40 font-semibold text-lg transition-all duration-300 hover:scale-105 active:scale-95"

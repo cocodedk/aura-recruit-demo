@@ -6,8 +6,8 @@
   <title>Page Not Found - Aura Recruit</title>
   <script>
     // Redirect to the main app and let Vue Router handle the route
-    const path = window.location.pathname.replace('/aura-recruit-demo', '');
-    const redirect = '/aura-recruit-demo/' + (path === '/' ? '' : '?redirect=' + encodeURIComponent(path));
+    const path = window.location.pathname;
+    const redirect = '/' + (path === '/' ? '' : '?redirect=' + encodeURIComponent(path));
     window.location.replace(redirect);
   </script>
 </head>

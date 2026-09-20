@@ -25,7 +25,7 @@ describe('AboutDemoView', () => {
 
   it('renders live demo link', () => {
     const wrapper = mount(AboutDemoView)
-    const demoLink = wrapper.find('a[href="https://cocodedk.github.io/aura-recruit-demo/"]')
+    const demoLink = wrapper.find('a[href="https://aura.cocode.dk/"]')
     expect(demoLink.exists()).toBe(true)
   })
 

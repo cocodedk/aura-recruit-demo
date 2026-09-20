@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "license": "UNLICENSED",
-  "homepage": "https://cocodedk.github.io/aura-recruit-demo/",
+  "homepage": "https://aura.cocode.dk/",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
