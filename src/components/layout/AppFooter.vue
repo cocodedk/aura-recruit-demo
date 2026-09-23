@@ -75,18 +75,6 @@
           </h4>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             <a
-              href="https://cocode.dk"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors font-medium text-sm md:text-base group"
-            >
-              <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
-              <span class="group-hover:underline">cocode.dk</span>
-            </a>
-            <span class="hidden sm:inline-block text-white/40">•</span>
-            <a
               href="https://linkedin.com/in/babakbandpey"
               target="_blank"
               rel="noopener noreferrer"

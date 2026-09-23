@@ -64,15 +64,15 @@ describe('AppHeader', () => {
     const mobileButton = wrapper.find('.md\\:hidden')
 
     // Initially menu should not be visible
-    expect(wrapper.find('.fixed.inset-0.top-16').exists()).toBe(false)
+    expect(wrapper.find('.absolute.inset-x-0.top-full').exists()).toBe(false)
 
     // Click to open
     await mobileButton.trigger('click')
-    expect(wrapper.find('.fixed.inset-0.top-16').exists()).toBe(true)
+    expect(wrapper.find('.absolute.inset-x-0.top-full').exists()).toBe(true)
 
     // Click to close
     await mobileButton.trigger('click')
-    expect(wrapper.find('.fixed.inset-0.top-16').exists()).toBe(false)
+    expect(wrapper.find('.absolute.inset-x-0.top-full').exists()).toBe(false)
   })
 
   it('closes mobile menu when clicking overlay', async () => {
@@ -86,12 +86,12 @@ describe('AppHeader', () => {
 
     // Open menu
     await mobileButton.trigger('click')
-    expect(wrapper.find('.fixed.inset-0.top-16').exists()).toBe(true)
+    expect(wrapper.find('.absolute.inset-x-0.top-full').exists()).toBe(true)
 
     // Click overlay to close
-    const overlay = wrapper.find('.fixed.inset-0.top-16')
+    const overlay = wrapper.find('.absolute.inset-x-0.top-full')
     await overlay.trigger('click')
-    expect(wrapper.find('.fixed.inset-0.top-16').exists()).toBe(false)
+    expect(wrapper.find('.absolute.inset-x-0.top-full').exists()).toBe(false)
   })
 
   it('applies active class to current route', async () => {
@@ -145,13 +145,13 @@ describe('AppHeader', () => {
 
     // Open menu
     await mobileButton.trigger('click')
-    expect(wrapper.find('.fixed.inset-0.top-16').exists()).toBe(true)
+    expect(wrapper.find('.absolute.inset-x-0.top-full').exists()).toBe(true)
 
     // Click a navigation link
-    const homeLink = wrapper.find('.fixed.inset-0.top-16 a')
+    const homeLink = wrapper.find('.absolute.inset-x-0.top-full a')
     await homeLink.trigger('click')
 
     // Menu should close
-    expect(wrapper.find('.fixed.inset-0.top-16').exists()).toBe(false)
+    expect(wrapper.find('.absolute.inset-x-0.top-full').exists()).toBe(false)
   })
 })

@@ -77,10 +77,10 @@ const navItems = [
       </div>
     </div>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu Overlay: hangs from the header's bottom edge, which the cocode.dk frame above it moves -->
     <div
       v-if="isMenuOpen"
-      class="md:hidden fixed inset-0 top-16 bg-aura-navy z-40 transition-all duration-300"
+      class="md:hidden absolute inset-x-0 top-full h-screen bg-aura-navy z-40 transition-all duration-300"
       @click="closeMenu"
     >
       <nav class="px-6 py-8 space-y-6 animate-in slide-in-from-top-2 duration-300">
