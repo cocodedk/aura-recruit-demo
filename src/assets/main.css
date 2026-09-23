@@ -83,3 +83,16 @@ h1, h2, h3, h4, h5, h6 {
 .bg-aura-charcoal {
   color: #ffffff;
 }
+
+/* The cocode.dk frame (brand.cocode.dk) sits outside #app, on the navy of the header and footer
+   it touches. Their column is left-aligned with a constant 24px gutter (px-6), so the frame is
+   unbounded with the same gutter. */
+cocode-head, cocode-foot {
+  --cocode-max: none;
+  --cocode-gutter: 24px;
+  background: var(--color-aura-navy);
+}
+/* Below md the fixed MobileCTA (63px + safe area) covers the page bottom; keep the foot clear of it. */
+@media (max-width: 767.98px) {
+  cocode-foot { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+}
